@@ -1,1 +1,8 @@
-importScripts("https://pcdn.dengage.com/p/push/37/64f7f560-d30b-f519-7bb3-37bc6153a2ee/dengage_sw.js");
+
+var swUrl = new URL(location);
+var accountId = swUrl.searchParams.get('account_id') || '';
+var appGuid = swUrl.searchParams.get('app_guid') || '';
+if (accountId && appGuid) {
+    importScripts("https://pcdn.dengage.com/p/push/" + accountId + "/" + appGuid + "/dengage_sw.js");
+}
+        
